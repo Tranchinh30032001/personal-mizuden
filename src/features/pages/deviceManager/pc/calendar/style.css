@@ -1,0 +1,59 @@
+/* Calendar container */
+.calendar-container {
+  @apply bg-white rounded-lg shadow p-4;
+}
+
+/* Weekday header */
+.week-day-header {
+  @apply grid grid-cols-7 border-t-[1px] border-b-[1px] border-gray-400;
+}
+
+.week-day-cell {
+  @apply p-3 text-center text-sm font-medium text-gray-700 border-r border-gray-400;
+}
+
+.week-day-cell:first-child {
+  @apply border-l-[1px] border-gray-400;
+}
+
+/* FullCalendar styles */
+.fc-col-header-cell {
+  @apply h-20;
+}
+
+.fc-timegrid-slot {
+  @apply !h-12;
+}
+
+.fc-theme-standard td,
+.fc-theme-standard th {
+  @apply !border-gray-400;
+}
+
+/* Day number */
+.day-number {
+  @apply text-sm font-medium mb-1 border-none;
+}
+
+/* Scrollable calendar container */
+.calendar-scroll-container {
+  height: calc(100vh - 240px); /* Adjust this value based on your layout */
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.fc .fc-daygrid-day-frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.fc .fc-daygrid-day-top {
+  justify-content: center;
+}
+
+.fc .fc-daygrid-day-number {
+ @apply text-base font-semibold
+}
+

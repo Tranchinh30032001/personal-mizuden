@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Playwrite+ES+Deco+Guides&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    /* color */
+    --color-blue-primary: #1353b7; /* for sidebar, bg header, and icon in general */
+    --color-blue-secondary: #048cc7; /*  color for almost content in content container */
+    --color-gray-primary: #222; /* text color */
+    --color-border-primary: #383838; /* border color */
+    --color-gray-container: #f0f0f0; /* background color for container */
+    --color-bottom-button-container: #D6D6D6; /* background color for bottom button container */
+
+    --color-border-bottom-table: #777777;
+    /* size */
+    --height-header: 45px;
+    --width-form-login: 600px;
+    --width-sidebar: 200px;
+
+    /* font family */
+    --font-family-japan: 'Noto Sans JP', serif;
+  }
+
+  html {
+    font-family:var(--font-family-japan)
+  }
+}
+
+@layer components {
+  /* Global container layout */
+  .container {
+    @apply min-h-screen flex flex-col items-center justify-center bg-white p-4 min-w-full;
+  }
+
+  .inputCustom {
+   @apply input input-bordered w-full !outline-none input-sm rounded-md
+  }
+
+  .selectCustom {
+    @apply select select-bordered w-full bg-white !outline-none select-sm rounded-md
+  }
+  /* Custom styling for form field labels (Input, Select, Radio, etc.) */
+  .formLabel {
+    @apply text-sm overflow-hidden text-ellipsis font-medium text-gray-primary;
+  }
+  /*  Styling for button */
+  .operate_button {
+    @apply btn btn-sm md:btn-md text-white rounded-md w-full text-sm font-medium;
+    background-color: var(--color-blue-secondary);
+  }
+  /* Hover effect for button */
+  .operate_button:hover {
+    opacity: 0.5;
+    background-color: var(--color-blue-secondary);
+  }
+
+  .cancelButton {
+   @apply btn btn-md sm:btn-sm md:btn-md font-bold text-gray-primary rounded-md w-full;
+    background-color: var(--color-gray-container);
+  }
+  .cancelButton:hover {
+    color: var(--color-gray-container);
+  }
+
+  .short_button {
+    @apply w-32
+  }
+
+  /* Styling for title of Page like LoginPage */
+  .title {
+    @apply text-2xl font-semibold text-gray-900;
+  }
+  /* Styling for error message */
+  .errorMessage {
+    @apply mt-1 text-sm text-red-500;
+  }
+  .second_title {
+    @apply font-medium font-japan text-xl leading-5 text-gray-primary ml-1;
+  }
+  /* Styling for error message */
+  .errorMessage {
+    @apply mt-1 text-sm text-red-500;
+  }
+  /* Styling for lable of Title Component */
+  .second_title {
+    @apply font-medium font-japan text-xl leading-5 text-gray-primary;
+  }
+}
+
+@layer utilities {
+  .table_row_shadow {
+    box-shadow: 0px 1px 0px 0px var(--color-border-bottom-table);
+  }
+}
